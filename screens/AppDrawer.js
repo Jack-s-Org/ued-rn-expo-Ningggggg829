@@ -22,7 +22,7 @@ export default function AppDrawer({ navigation, children }) {
             <DrawerItem
               label="Settings"
               onPress={() => {
-                navigation.navigate("Settings");
+                navigation.navigate("Settings"); //"settings" = name of the screen
               }}
             />
             <DrawerItem
