@@ -11,11 +11,11 @@ import { useEffect } from "react";
 
 const NFCScreenStatic = ({ navigation }) => {
   useEffect(() => {
-    const timer = setTimeout(() => {
+    const timer = window.setTimeout(() => {
       navigation.navigate("NFC");
     }, 200);
 
-    return () => clearTimeout(timer);
+    return () => window.clearTimeout(timer);
   }, [navigation]);
 
   return (

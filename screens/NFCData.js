@@ -73,12 +73,12 @@ const NFCDataScreen = ({ navigation }) => {
                 position: "absolute",
                 top: 0,
                 right: 4,
-                zIndex: 1,
+                zIndex: 2,
               }}
-              // onPress={() => {
-              //   navigation.replace("Main", { screen: "NFC" });
-              // }}
-              // options={{ animation: "fadeOut" }}
+              onPress={() => {
+                navigation.replace("Main", { screen: "AR" });
+              }}
+              options={{ animation: "fadeOut" }}
             >
               <Image
                 source={require("@/assets/NFCData/AR.png")}

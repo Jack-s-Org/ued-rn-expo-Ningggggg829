@@ -22,17 +22,17 @@ const onboardingData = [
   },
   {
     key: "2",
-    title: "AR FEATURE",
+    title: "                                          AR FEATURE",
     subtitle:
-      "Explore our AR Mode to see don'ts for appliance use through engaging animations. Simply tap to interact and learn proper usage, maintenance, and safety tips in a dynamic, virtual environment.",
-    video: require("@/assets/Videos/WelcomePage.mp4"),
+      "Discover appliance safety and maintenance with interactive AR animations. Tap to engage and learn proper usage in a dynamic virtual environment.",
+    video: require("@/assets/Videos/boardingpage2.mp4"),
   },
   {
     key: "3",
-    title: "NFC FEATURE",
+    title: "                                         NFC FEATURE",
     subtitle:
-      "Experience a new way to interact with your kitchen appliances with our NFC Scan feature. Simply scan the NFC tags to instantly access comprehensive information about each appliance.",
-    video: require("@/assets/Videos/BoardingPage2.mp4"),
+      "Easily access appliance details with our NFC Scan feature. Just scan the NFC tags for instant information on each appliance.",
+    video: require("@/assets/Videos/boardingpage3.mp4"),
   },
 ];
 
@@ -153,7 +153,7 @@ const styles = StyleSheet.create({
     position: "absolute",
     bottom: 200,
     left: 30,
-    width: 300,
+    width: 270,
     height: 68,
   },
   title: {

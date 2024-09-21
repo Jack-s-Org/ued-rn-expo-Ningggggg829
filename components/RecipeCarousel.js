@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   Text,
   View,
@@ -8,10 +8,8 @@ import {
   Pressable,
   StyleSheet,
 } from "react-native";
-import { LinearGradient } from "expo-linear-gradient";
 import { useNavigation } from "@react-navigation/native";
 import Entypo from "@expo/vector-icons/Entypo";
-import { useState } from "react";
 
 const Recipe = [
   {
@@ -98,12 +96,18 @@ function RecipeCarousel() {
               source={product.imageBackground}
               style={styles.imageBackground}
             >
-              <ExploreButton />
+              <ExploreButton
+                isNavigable={product.name === "Spaghetti Bolognese"}
+                onPress={() => {
+                  if (product.name === "Spaghetti Bolognese") {
+                    navigation.navigate("RecipePortion");
+                  }
+                }}
+              />
               <Image
                 source={product.productImage}
                 style={styles.productImage}
               />
-
               <View style={styles.textContainer}>
                 <Text style={styles.productName}>{product.name}</Text>
                 <Text style={styles.ingredientsText}>
@@ -127,7 +131,7 @@ function RecipeCarousel() {
   );
 }
 
-function ExploreButton() {
+function ExploreButton({ isNavigable, onPress }) {
   const [isPressed, setIsPressed] = useState(false);
 
   return (
@@ -137,8 +141,13 @@ function ExploreButton() {
         { backgroundColor: isPressed ? "#C44E34" : "#F36244" },
       ]}
       onPressIn={() => setIsPressed(true)}
-      onPressOut={() => setIsPressed(false)}
-      // Optionally, add onPress handler here
+      onPressOut={() => {
+        setIsPressed(false);
+        if (isNavigable) {
+          onPress();
+        }
+      }}
+      disabled={!isNavigable}
     >
       <Image
         source={require("@/assets/Recipe/explore.png")}

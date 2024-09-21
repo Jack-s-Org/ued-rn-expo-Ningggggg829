@@ -4,11 +4,11 @@ import VideoPlayer from "@/components/VideoPlayer";
 
 const NFCScreen = ({ navigation }) => {
   useEffect(() => {
-    const timer = setTimeout(() => {
+    const timer = window.setTimeout(() => {
       navigation.navigate("NFCData");
     }, 7300);
 
-    return () => clearTimeout(timer);
+    return () => window.clearTimeout(timer);
   }, [navigation]);
 
   return <VideoPlayer />;

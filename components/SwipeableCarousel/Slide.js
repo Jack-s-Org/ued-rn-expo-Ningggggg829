@@ -18,8 +18,8 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
     borderColor: "#877571",
-    // transform: [{ rotateY: "45deg" }, { rotateZ: "0deg" }],
-    // marginLeft: -20,
+    transform: [{ rotateY: "45deg" }, { rotateZ: "0deg" }],
+    marginLeft: -20,
   },
   content: {
     justifyContent: "center",

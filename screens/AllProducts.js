@@ -1,14 +1,42 @@
-import { StyleSheet, Text, ImageBackground, View } from "react-native";
+import {
+  StyleSheet,
+  Text,
+  ImageBackground,
+  View,
+  Pressable,
+  Image
+} from "react-native";
 import ProductsCarousel from "@/components/ProductsCarousel";
 
-const AllProductsScreen = () => {
+const AllProductsScreen = ({ navigation }) => {
   return (
     <View style={{ height: 844, width: 390 }}>
       <ImageBackground
         source={require("@/assets/Products/ProductBG.png")}
-        style={{ height: 804, width: 390 }}
+        style={{ height: 854, width: 390 }}
       >
-        <View style={{ marginTop: 120, marginLeft: 20 }}>
+        <Pressable
+          style={{
+            height: 40,
+            width: 40,
+            position: "absolute",
+            top: 70,
+            left: 20,
+            zIndex: 1,
+          }}
+          onPress={() => {
+            navigation.replace("Main", { screen: "Home" });
+          }}
+        >
+          <Image
+            source={require("@/assets/NFCData/backButton.png")}
+            style={{
+              width: 40,
+              height: 40,
+            }}
+          ></Image>
+        </Pressable>
+        <View style={{ marginTop: 140, marginLeft: 20 }}>
           <Text
             style={{
               color: "#F36244",
@@ -20,7 +48,7 @@ const AllProductsScreen = () => {
           </Text>
         </View>
 
-        <View style={{ position: "absolute", top: 130 }}>
+        <View style={{ position: "absolute", top: 155 }}>
           <ProductsCarousel></ProductsCarousel>
         </View>
       </ImageBackground>

@@ -74,7 +74,7 @@ const SwipeableCarouselParallaxHorizontal = () => {
         mode="parallax"
         modeConfig={{
           parallaxScrollingScale: 0.9,
-          parallaxScrollingOffset: 60,
+          parallaxScrollingOffset: 120,
         }}
         data={data}
         onSnapToItem={(index) => setIndex(index)}
